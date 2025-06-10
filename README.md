@@ -19,7 +19,8 @@ To run the app on your Android device:
 
 - `DL_Course_Project` - Files which we submitted for the requirement for the course. Contains the detailed report about the strategy used while tarining and fine-tuning.
 - `SkinCancerApp/` - Source code for the Android app using **PyTorch Android Lite** to run inference.
-- `pytorch_models` - MobileNetV3 models in Pytorch format. For Serialized TorchScript models, please head up to [assets](SkinCancerApp\app\src\main\assets\)
+- `pytorch_models` - MobileNetV3 models in Pytorch format. For Serialized TorchScript models, please head up to 
+[assets](SkinCancerApp\app\src\main\assets\)
 - `Export_Mobile.ipynb` - Code for conversion of a pytorch model into serialized torchScript model and testing the same on the validation and train  datasets
 - `Skin_Cancer_Large_DL` - Code for training the HAM10000 Dataset on [MobileNetV3-Large](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.mobilenet_v3_large.html)
 - `Skin_Cancer_Small_DL` - Code for training the HAM10000 Dataset on [MobileNetV3-Small](https://docs.pytorch.org/vision/main/models/generated/torchvision.models.mobilenet_v3_small.html)
