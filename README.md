@@ -8,11 +8,12 @@ This project was developed as part of the course **CS F425 Deep Learning** cours
 As we have chose to train a MobileNet based model, it naturally lends itself to deployment on modern smartphones. To leverage this, we went a step further and developed a user-friendly and light-weight Android application that runs the model seamlessly on smartphones, making skin cancer detection accessible anytime, anywhere. 
 
 To run the app on your Android device:
-1. Build APK by going to Top Menu Bar -> Build -> Build Bundle(s) / APK(s) -> Build APK(s) 
-2. Download the app_debug.apk from `app/build/outputs/apk` in your mobile.
-3. Locate the downloaded file in the Downloads folder of your file system.
-4. Tap to install. If prompted, grant the necessary permissions (e.g., install from unknown sources).
-5. Once installed, launch the app from your app drawer—you're ready to go!
+1. Download the repository and Open the SkinCancerApp in Android Studio.
+2. Build APK by going to Top Menu Bar -> Build -> Build Bundle(s) / APK(s) -> Build APK(s) 
+3. Download the app_debug.apk from `app/build/outputs/apk` in your mobile.
+4. Locate the downloaded file in the Downloads folder of your file system.
+5. Tap to install. If prompted, grant the necessary permissions (e.g., install from unknown sources).
+6. Once installed, launch the app from your app drawer—you're ready to go!
 
 ---
 ## What's Inside
