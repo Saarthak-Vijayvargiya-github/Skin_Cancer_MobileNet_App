@@ -55,11 +55,13 @@ In our University project, we have trained the model on the dataset on GrayScale
      <td align="center"><b>Welcome Page</b></td>
      <td align="center"><b>Take Picture</b></td>
      <td align="center"><b>Upload from Gallery</b></td>
+     <td align="center"><b>Result</b></td>
   </tr>
   <tr>
     <td><img src="https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/App_Images/1_Welcome.jpg" width=500></td>
     <td><img src="https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/App_Images/2_TakePic.jpg" width=500></td>
     <td><img src="https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/App_Images/3_Gallery.jpg" width=500></td>
+    <td><img src="https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/App_Images/4_Result.jpg" width=500></td>
   </tr>
 </table>
 
