@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/model_info"
+        android:title="Model Info"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/developer_info"
+        android:title="Developer(s)"
+        app:showAsAction="never" />
+</menu>
