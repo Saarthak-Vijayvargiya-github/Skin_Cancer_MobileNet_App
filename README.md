@@ -48,6 +48,22 @@ To run the app on your Android device:
 In our University project, we have trained the model on the dataset on GrayScale Image dataset which was provided by our instructors. We could have implemented this model also in our app by implementing an additional conversion of the captured image by the camera to grayscale. To improve the accuracy of the models in the extended project, we trained the images on color images as provided in HAM10000 dataset and deployed this model in our application.
 
 ---
+## App Overview
+
+<table>
+  <tr>
+     <td align="center"><b>Welcome Page</b></td>
+     <td align="center"><b>Take Picture</b></td>
+     <td align="center"><b>Upload from Gallery</b></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/App_Images/1_Welcome.jpg" width=500></td>
+    <td><img src="https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/App_Images/2_TakePic.jpg" width=500></td>
+    <td><img src="https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/App_Images/3_Gallery.jpg" width=500></td>
+  </tr>
+</table>
+
+---
 ## Libraries and Software Versions
 1. Used Conda Environment for model training:
   - Python - 3.9.19, PyTorch - 2.5.1, Pillow - 10.4.0
