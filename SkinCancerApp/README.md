@@ -1,4 +1,4 @@
-This Project was referenced from PyTorch's [HelloWorld](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp) Application! The below text explains how to prepare the model for mobile applications using [pytorch_android](https://github.com/pytorch/pytorch/tree/main/android)
+This Project was referenced from PyTorch's [HelloWorld](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp) Application! The below text explains how to prepare the model for mobile applications using [pytorch_android](https://github.com/pytorch/pytorch/tree/main/android).
 
 ## Quickstart
 
@@ -18,9 +18,10 @@ To serialize and optimize the model for Android, you can use the Python [script]
 ```Python
 import torch
 import torchvision
-from torch.utils.mobile_optimizer import optimize_for_mobile
 
 model = torchvision.models.mobilenet_v3_small(pretrained=True)
+# Modify the architecture and weights from trained model.
+
 model.eval()
 example = torch.rand(1, 3, 224, 224)
 traced_script_module = torch.jit.trace(model, example)
@@ -96,7 +97,7 @@ The `TensorImageUtils#bitmapToFloat32Tensor` method creates tensors in the [torc
 
 #### 7. Run Inference
 
-```
+```Java
 Tensor outputTensor = module.forward(IValue.from(inputTensor)).toTensor();
 float[] scores = outputTensor.getDataAsFloatArray();
 ```
