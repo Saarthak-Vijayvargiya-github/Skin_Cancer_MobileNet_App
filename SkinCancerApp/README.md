@@ -103,7 +103,7 @@ Tensor outputTensor = module.forward(IValue.from(inputTensor)).toTensor();
 float[] scores = outputTensor.getDataAsFloatArray();
 ```
 
-`org.pytorch.Module.forward` method runs loaded module's `forward` method and gets result as `org.pytorch.Tensor` outputTensor with shape `1x1000`.
+`org.pytorch.Module.forward` method runs loaded module's `forward` method and gets result as `org.pytorch.Tensor` outputTensor with shape `1x7`.
 
 #### 8. Processing results
 Its content is retrieved using `org.pytorch.Tensor.getDataAsFloatArray()` method that returns java array of floats with scores for every image net class.
