@@ -37,8 +37,8 @@ More details about TorchScript you can find in [tutorials on pytorch.org](https:
 
 #### 2. Cloning from github
 ```
-git clone https://github.com/pytorch/android-demo-app.git
-cd HelloWorldApp
+git clone https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/tree/main/SkinCancerApp
+cd SkinCancerApp
 ```
 If [Android SDK](https://developer.android.com/studio/index.html#command-tools) and [Android NDK](https://developer.android.com/ndk/downloads) are already installed you can install this application to the connected android device or emulator with:
 ```
@@ -71,7 +71,8 @@ Further in this doc you can find how to rebuild it only for specific list of and
 
 All the logic happens in [`org.pytorch.helloworld.MainActivity`](https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/SkinCancerApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java).
 As a first step we read `image.jpg` to `android.graphics.Bitmap` using the standard Android API.
-```
+
+```Java
 Bitmap bitmap = BitmapFactory.decodeStream(getAssets().open("image.jpg"));
 ```
 
