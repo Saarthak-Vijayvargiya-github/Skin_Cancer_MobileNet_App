@@ -37,8 +37,8 @@ More details about TorchScript you can find in [tutorials on pytorch.org](https:
 
 #### 2. Cloning from github
 ```
-git clone https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/tree/main/SkinCancerApp
-cd SkinCancerApp
+git clone https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App.git
+cd Skin_Cancer_MobileNet_App/SkinCancerApp
 ```
 If [Android SDK](https://developer.android.com/studio/index.html#command-tools) and [Android NDK](https://developer.android.com/ndk/downloads) are already installed you can install this application to the connected android device or emulator with:
 ```
