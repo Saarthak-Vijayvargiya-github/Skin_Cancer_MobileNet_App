@@ -1,6 +1,8 @@
+This Project was referenced from PyTorch's [HelloWorld](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp) Application! The below text explains how to prepare the model for mobile applications using [pytorch_android](https://github.com/pytorch/pytorch/tree/main/android)
+
 ## Quickstart
 
-[HelloWorld](https://github.com/pytorch/android-demo-app/tree/master/HelloWorldApp) is a simple image classification application that demonstrates how to use PyTorch Android API.
+[SkinCancerApp](https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/tree/main/SkinCancerApp) is a simple image classification application that demonstrates how to use PyTorch Android API.
 This application runs TorchScript serialized TorchVision pretrained [MobileNet v3 model](https://pytorch.org/vision/stable/models.html) on static image which is packaged inside the app as android asset.
 
 #### 1. Model Preparation
@@ -11,8 +13,9 @@ To install it, run the command below:
 pip install torch torchvision
 ```
 
-To serialize and optimize the model for Android, you can use the Python [script](https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/trace_model.py) in the root folder of HelloWorld app:
-```
+To serialize and optimize the model for Android, you can use the Python [script](https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/Export_Mobile.ipynb) in the root folder of the project:
+
+```Python
 import torch
 import torchvision
 from torch.utils.mobile_optimizer import optimize_for_mobile
@@ -21,9 +24,9 @@ model = torchvision.models.mobilenet_v3_small(pretrained=True)
 model.eval()
 example = torch.rand(1, 3, 224, 224)
 traced_script_module = torch.jit.trace(model, example)
-optimized_traced_model = optimize_for_mobile(traced_script_module)
-optimized_traced_model._save_for_lite_interpreter("app/src/main/assets/model.ptl")
+torch.jit.save(traced_model, "SkinCancerApp/app/src/main/assets/model.pt")
 ```
+
 If everything works well, we should have our scripted and optimized model - `model.pt` generated in the assets folder of android application.
 That will be packaged inside android application as `asset` and can be used on the device.
 
@@ -46,7 +49,7 @@ in that case you will be able to install Android NDK and Android SDK using Andro
 
 #### 3. Gradle dependencies
 
-Pytorch android is added to the HelloWorld as [gradle dependencies](https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/build.gradle#L28-L29) in build.gradle:
+Pytorch android is added to the SkinCancerApp as [gradle dependencies](https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/build.gradle#L28-L29) in build.gradle:
 
 ```
 repositories {
@@ -54,8 +57,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.pytorch:pytorch_android_lite:1.9.0'
-    implementation 'org.pytorch:pytorch_android_torchvision:1.9.0'
+    implementation 'org.pytorch:pytorch_android:1.13.1'
+    implementation 'org.pytorch:pytorch_android_torchvision:1.13.1'
 }
 ```
 Where `org.pytorch:pytorch_android` is the main dependency with PyTorch Android API, including libtorch native library for all 4 android abis (armeabi-v7a, arm64-v8a, x86, x86_64).
@@ -65,20 +68,21 @@ Further in this doc you can find how to rebuild it only for specific list of and
 
 #### 4. Reading image from Android Asset
 
-All the logic happens in [`org.pytorch.helloworld.MainActivity`](https://github.com/pytorch/android-demo-app/blob/master/HelloWorldApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java#L31-L69).
+All the logic happens in [`org.pytorch.helloworld.MainActivity`](https://github.com/Saarthak-Vijayvargiya-github/Skin_Cancer_MobileNet_App/blob/main/SkinCancerApp/app/src/main/java/org/pytorch/helloworld/MainActivity.java).
 As a first step we read `image.jpg` to `android.graphics.Bitmap` using the standard Android API.
 ```
 Bitmap bitmap = BitmapFactory.decodeStream(getAssets().open("image.jpg"));
 ```
 
 #### 5. Loading TorchScript Module
-```
-Module module = LiteModuleLoader.load(assetFilePath(this, "model.pt"));
+
+```Java
+Module module = Module.load(assetFilePath(this, "model_large.pt"));
 ```
 `org.pytorch.Module` represents `torch::jit::script::Module` that can be loaded with `load` method specifying file path to the serialized to file model.
 
 #### 6. Preparing Input
-```
+```Java
 Tensor inputTensor = TensorImageUtils.bitmapToFloat32Tensor(bitmap,
     TensorImageUtils.TORCHVISION_NORM_MEAN_RGB, TensorImageUtils.TORCHVISION_NORM_STD_RGB);
 ```
@@ -104,7 +108,7 @@ Its content is retrieved using `org.pytorch.Tensor.getDataAsFloatArray()` method
 
 After that we just find index with maximum score and retrieve predicted class name from `ImageNetClasses.IMAGENET_CLASSES` array that contains all ImageNet classes.
 
-```
+```Java
 float maxScore = -Float.MAX_VALUE;
 int maxScoreIdx = -1;
 for (int i = 0; i < scores.length; i++) {
