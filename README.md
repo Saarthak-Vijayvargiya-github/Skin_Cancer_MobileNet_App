@@ -83,10 +83,4 @@ If you suspect any skin irregularities or medical conditions, **please consult a
 The model is trained only on a set of labeled skin cancer types and **cannot determine whether a skin is healthy or unhealthy**. It classifies images among the cancer types it has seen during training, and **may not generalize to unseen or benign cases**. It's important to note that we do not claim the code to be entirely error-free, and there may be potential errors during its execution. Use this software responsibly and at your own risk.
 
 ---
-## Contributors:
-1) Saarthak Vijayvargiya (BITS Pilani University)
-2) Afzal Aftab (BITS Pilani University)
-3) S Sanju (BITS Pilani University)
-
----
 ## Have fun! Thank-You!
