@@ -5,7 +5,7 @@ This project was developed as part of the course **CS F425 Deep Learning** cours
 ---
 ## Well.. What's the purpose?
 
-As we have chose to train a MobileNet based model, it naturally lends itself to deployment on modern smartphones. To leverage this, we went a step further and developed a user-friendly and light-weight Android application that runs the model seamlessly on smartphones, making skin cancer detection accessible anytime, anywhere. 
+As we have chose to train a MobileNet based model, it naturally lends itself to deployment on modern smartphones. To leverage this, we went a step further and developed a user-friendly and light-weight Android application that runs the model seamlessly on smartphones, making skin cancer detection accessible anytime, anywhere.
 
 To run the app on your Android device:
 1. Download the app-release.apk from [here](SkinCancerApp/app/release/) in your mobile.
