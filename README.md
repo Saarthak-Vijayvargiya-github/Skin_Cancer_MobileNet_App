@@ -11,7 +11,7 @@ To run the app on your Android device:
 1. Download the app-release.apk from [here](SkinCancerApp/app/release/) in your mobile.
 2. Locate the downloaded file in the Downloads folder of your file system.
 3. Tap to install. If prompted, grant the necessary permissions (e.g., install from unknown sources).
-4. Once installed, launch the app from your app drawer—you're ready to go!
+4. Once installed, launch the app from your app drawer—you're ready to go! 
 
 ---
 ## What's Inside
